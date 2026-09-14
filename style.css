@@ -1,0 +1,419 @@
+/* ==========================================================================
+   Maple & Mill — shared stylesheet
+   ========================================================================== */
+
+:root {
+  --ink: #2b2622;
+  --cream: #f7f0e3;
+  --cream-deep: #efe4cf;
+  --clay: #8c4a2f;
+  --clay-dark: #6e3a24;
+  --sage: #5b6e4f;
+  --white: #ffffff;
+  --line: #ddd0b6;
+
+  --font-display: "Fraunces", Georgia, serif;
+  --font-body: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+\}
+
+body {
+  margin: 0;
+  background: var(--cream);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--clay);
+}
+
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+textarea:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--sage);
+  outline-offset: 3px;
+}
+
+.skip-link {
+  position: absolute;
+  left: -999px;
+  top: auto;
+  background: var(--ink);
+  color: var(--white);
+  padding: 0.75em 1.25em;
+  z-index: 100;
+  border-radius: 0 0 6px 0;
+}
+
+.skip-link:focus {
+  left: 0;
+  top: 0;
+}
+
+/* ---------- Layout shell ---------- */
+
+.wrap {
+  max-width: 72rem;
+  margin-inline: auto;
+  padding-inline: 1.5rem;
+}
+
+/* ---------- Header & nav ---------- */
+
+.site-header {
+  border-bottom: 1px solid var(--line);
+  background: var(--cream);
+}
+
+.site-header .wrap {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-block: 1.25rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.brand {
+  font-family: var(--font-display);
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-decoration: none;
+  color: var(--ink);
+  letter-spacing: 0.01em;
+}
+
+.brand span {
+  color: var(--clay);
+}
+
+.site-nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.75rem;
+  margin: 0;
+  padding: 0;
+}
+
+.site-nav a {
+  text-decoration: none;
+  color: var(--ink);
+  font-weight: 500;
+  padding-bottom: 0.2rem;
+  border-bottom: 2px solid transparent;
+}
+
+.site-nav a:hover,
+.site-nav a[aria-current="page"] {
+  border-bottom-color: var(--clay);
+}
+
+.site-nav a[aria-current="page"] {
+  color: var(--clay-dark);
+}
+
+/* ---------- Hero ---------- */
+
+.hero {
+  padding-block: 4rem 3rem;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero .eyebrow {
+  color: var(--sage);
+  font-weight: 600;
+  margin: 0 0 0.75rem;
+}
+
+.hero h1 {
+  font-family: var(--font-display);
+  font-size: clamp(2.25rem, 5vw, 3.5rem);
+  line-height: 1.1;
+  margin: 0 0 1rem;
+  max-width: 18ch;
+}
+
+.hero p.lede {
+  max-width: 42ch;
+  font-size: 1.15rem;
+  color: #4a4239;
+  margin: 0 0 1.75rem;
+}
+
+.button {
+  display: inline-block;
+  background: var(--clay);
+  color: var(--white);
+  text-decoration: none;
+  padding: 0.75em 1.5em;
+  border-radius: 4px;
+  font-weight: 600;
+  border: 2px solid var(--clay);
+}
+
+.button:hover {
+  background: var(--clay-dark);
+  border-color: var(--clay-dark);
+}
+
+.button.secondary {
+  background: transparent;
+  color: var(--clay);
+}
+
+.button.secondary:hover {
+  background: var(--clay);
+  color: var(--white);
+}
+
+/* ---------- Sections ---------- */
+
+main section {
+  padding-block: 3rem;
+}
+
+main section + section {
+  border-top: 1px solid var(--line);
+}
+
+.section-heading {
+  font-family: var(--font-display);
+  font-size: 2rem;
+  margin: 0 0 1.5rem;
+}
+
+/* ---------- Two column / about ---------- */
+
+.split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+@media (max-width: 700px) {
+  .split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.split figure {
+  margin: 0;
+}
+
+.split figcaption {
+  font-size: 0.9rem;
+  color: #6b6156;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Menu / services list ---------- */
+
+.menu-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  max-width: 46rem;
+}
+
+.menu-list li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 1rem;
+  border-bottom: 1px dashed var(--line);
+}
+
+.menu-list li:first-child {
+  padding-top: 0;
+}
+
+.menu-item-name {
+  font-weight: 600;
+}
+
+.menu-item-desc {
+  display: block;
+  font-weight: 400;
+  color: #6b6156;
+  font-size: 0.92rem;
+  margin-top: 0.2rem;
+}
+
+.menu-item-price {
+  font-family: var(--font-display);
+  white-space: nowrap;
+  color: var(--clay-dark);
+}
+
+/* ---------- Menu section photos ---------- */
+
+.menu-photo {
+  margin: 0 0 1.75rem;
+  max-width: 46rem;
+}
+
+.menu-photo img {
+  width: 100%;
+  height: 16rem;
+  object-fit: cover;
+  border-radius: 6px;
+}
+
+.menu-photo figcaption {
+  font-size: 0.9rem;
+  color: #6b6156;
+  margin-top: 0.5rem;
+}
+
+/* ---------- Cards (values / highlights) ---------- */
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+  gap: 1.75rem;
+}
+
+.card {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1.5rem;
+}
+
+.card h3 {
+  font-family: var(--font-display);
+  margin-top: 0;
+}
+
+/* ---------- Forms ---------- */
+
+.form-field {
+  margin-bottom: 1.25rem;
+  display: flex;
+  flex-direction: column;
+  max-width: 32rem;
+}
+
+.form-field label {
+  font-weight: 600;
+  margin-bottom: 0.4rem;
+}
+
+.form-field .hint {
+  font-size: 0.85rem;
+  color: #6b6156;
+  margin-bottom: 0.4rem;
+}
+
+.form-field input,
+.form-field select,
+.form-field textarea {
+  font: inherit;
+  padding: 0.65em 0.75em;
+  border: 1px solid #b9ab8f;
+  border-radius: 4px;
+  background: var(--white);
+  color: var(--ink);
+}
+
+fieldset {
+  border: 1px solid var(--line);
+  border-radius: 6px;
+  padding: 1rem 1.25rem 1.25rem;
+  margin: 0 0 1.25rem;
+  max-width: 32rem;
+}
+
+legend {
+  font-weight: 600;
+  padding-inline: 0.4rem;
+}
+
+.radio-row,
+.checkbox-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-block: 0.4rem;
+}
+
+.radio-row label,
+.checkbox-row label {
+  font-weight: 400;
+}
+
+.required-note {
+  color: #6b6156;
+  font-size: 0.9rem;
+}
+
+/* ---------- Hours / contact info list ---------- */
+
+.info-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.info-list li {
+  display: flex;
+  justify-content: space-between;
+  max-width: 20rem;
+  padding-block: 0.35rem;
+}
+
+/* ---------- Footer ---------- */
+
+.site-footer {
+  border-top: 1px solid var(--line);
+  background: var(--cream-deep);
+  padding-block: 2.5rem;
+  margin-top: 2rem;
+}
+
+.site-footer .wrap {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+}
+
+.site-footer nav ul {
+  list-style: none;
+  display: flex;
+  gap: 1.25rem;
+  padding: 0;
+  margin: 0.5rem 0 0;
+}
+
+.site-footer p {
+  margin: 0;
+}
+
+.site-footer small {
+  color: #6b6156;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
