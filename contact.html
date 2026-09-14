@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact &amp; Reservations — Maple &amp; Mill</title>
+  <meta name="description" content="Get in touch with Maple & Mill, reserve a table, or ask about catering and private events.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:wght@500;600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <a class="skip-link" href="#main-content">Skip to main content</a>
+
+  <header class="site-header">
+    <div class="wrap">
+      <a class="brand" href="index.html">Maple <span>&amp;</span> Mill</a>
+      <nav class="site-nav" aria-label="Main navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="contact.html" aria-current="page">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main-content">
+
+    <section class="hero">
+      <div class="wrap">
+        <p class="eyebrow">Get in touch</p>
+        <h1>Reserve a table or ask us anything.</h1>
+        <p class="lede">Use the form below to request a reservation, ask about catering, or just say hello. We reply within one business day.</p>
+      </div>
+    </section>
+
+    <section aria-labelledby="form-heading">
+      <div class="wrap split">
+        <div>
+          <h2 id="form-heading" class="section-heading">Send us a message</h2>
+
+          <form action="#" method="post">
+            <p class="required-note">Fields marked with an asterisk (*) are required.</p>
+
+            <div class="form-field">
+              <label for="full-name">Full name *</label>
+              <input type="text" id="full-name" name="full-name" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="email">Email address *</label>
+              <input type="email" id="email" name="email" autocomplete="email" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Phone number</label>
+              <span class="hint">Optional — only needed if you'd like a call back.</span>
+              <input type="tel" id="phone" name="phone" autocomplete="tel">
+            </div>
+
+            <div class="form-field">
+              <label for="reason">Reason for contacting us *</label>
+              <select id="reason" name="reason" required>
+                <option value="">Choose one</option>
+                <option value="reservation">Table reservation</option>
+                <option value="catering">Catering or private event</option>
+                <option value="feedback">Feedback</option>
+                <option value="other">Something else</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="party-size">Party size</label>
+              <span class="hint">Only needed for reservations.</span>
+              <input type="number" id="party-size" name="party-size" min="1" max="20">
+            </div>
+
+            <fieldset>
+              <legend>Preferred time of day</legend>
+              <div class="radio-row">
+                <input type="radio" id="time-morning" name="preferred-time" value="morning">
+                <label for="time-morning">Morning</label>
+              </div>
+              <div class="radio-row">
+                <input type="radio" id="time-afternoon" name="preferred-time" value="afternoon">
+                <label for="time-afternoon">Afternoon</label>
+              </div>
+              <div class="radio-row">
+                <input type="radio" id="time-evening" name="preferred-time" value="evening">
+                <label for="time-evening">Evening</label>
+              </div>
+            </fieldset>
+
+            <div class="form-field">
+              <label for="message">Message *</label>
+              <textarea id="message" name="message" rows="5" required></textarea>
+            </div>
+
+            <div class="checkbox-row">
+              <input type="checkbox" id="newsletter" name="newsletter" value="yes">
+              <label for="newsletter">Send me occasional news about seasonal menu items</label>
+            </div>
+
+            <p>
+              <button class="button" type="submit">Send message</button>
+            </p>
+          </form>
+        </div>
+
+        <aside aria-labelledby="details-heading">
+          <h2 id="details-heading" class="section-heading">Visit us</h2>
+          <p>142 Birchwood Avenue<br>Riverside, ST 00000</p>
+
+          <h3>Hours</h3>
+          <ul class="info-list">
+            <li><span>Monday–Friday</span> <span>7am–4pm</span></li>
+            <li><span>Saturday</span> <span>8am–4pm</span></li>
+            <li><span>Sunday</span> <span>8am–2pm</span></li>
+          </ul>
+
+          <h3>Other ways to reach us</h3>
+          <p>Email: <a href="mailto:hello@mapleandmill.example">hello@mapleandmill.example</a><br>
+          Phone: <a href="tel:+15555550142">(555) 555-0142</a></p>
+        </aside>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer">
+    <div class="wrap">
+      <div>
+        <p><strong>Maple &amp; Mill</strong></p>
+        <small>142 Birchwood Avenue &middot; Open 7am–4pm daily</small>
+      </div>
+      <nav aria-label="Footer navigation">
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Menu</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+</body>
+</html>
